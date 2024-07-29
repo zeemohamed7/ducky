@@ -1,0 +1,31 @@
+*,html {
+  margin: auto 0;
+}body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  #ducky {
+    width: 200px;
+    height: 200px;
+    /* background-image: url('ducky.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+  }
+  
+  #stats {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+  }
+
+canvas {
+    border: 1px solid black;
+  }

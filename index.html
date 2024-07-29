@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ducky Tamagotchi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+</head>
+
+<body>
+    <h1>Ducky Tamagotchi</h1>
+    <div id="ducky">
+        <canvas id="myCanvas" width="200" height="200"></canvas>
+    </div>
+    <div id="stats">
+        Hunger: <span id="hunger">100</span>%
+        <br>
+        Happiness: <span id="happiness">100</span>%
+        <br>
+        Energy: <span id="energy">100</span>%
+    </div>
+    <button id="feed-btn" onclick="feedDucky()">Feed</button>
+    <button id="play-btn" onclick="playWithDucky()">Play</button>
+    <button id="rest-btn" onclick="letDuckyRest()">Rest</button>
+
+</body>
+
+</html>
