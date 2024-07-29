@@ -1,14 +1,16 @@
 *,html {
   margin: auto 0;
-}body {
+}
+
+body {
     font-family: Arial, sans-serif;
     text-align: center;
     overflow: hidden;
   }
   
   #ducky {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     /* background-image: url('ducky.png'); */
     background-size: contain;
     background-repeat: no-repeat;
@@ -27,5 +29,9 @@
   }
 
 canvas {
+  display: block;
+  width: 400px;
+  height: 400px;
     border: 1px solid black;
   }
+  

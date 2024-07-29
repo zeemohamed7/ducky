@@ -16,13 +16,12 @@ const restBtn = document.querySelector("#rest-btn");
 let hungerLevel = 100;
 let happinessLevel = 100;
 let energyLevel = 100;
+let isPlaying = false;
 
 // CANVAS
 const ctx = canvas.getContext("2d");
 
 // Duck Sprite 🦆
-
-
 // Currently only for idle
 const duckImagesIdle = [
   new Image(),
@@ -60,12 +59,15 @@ function drawDuck() {
   }
 
   // Request the next frame
-  requestAnimationFrame(drawDuck);
+  animationFrameId = requestAnimationFrame(drawDuck);
+  
 
 }
 
 // Start duckidle animation
-drawDuck();
+if (!isPlaying) {
+  drawDuck();
+} 
 
 // FUNCTIONS
 function updateStats() {
@@ -81,16 +83,26 @@ function feedDucky() {
 }
 
 function playWithDucky() {
-  hungerLevel = Math.max(hungerLevel - 10, 0);
-  happinessLevel = Math.min(happinessLevel + 20, 100);
-  energyLevel = Math.max(energyLevel - 20, 0);
-  updateStats();
+  // hungerLevel = Math.max(hungerLevel - 10, 0);
+  // happinessLevel = Math.min(happinessLevel + 20, 100);
+  // energyLevel = Math.max(energyLevel - 20, 0);
+  // updateStats();
+  isPlaying = true;
+  createPlatformGame();
 }
 
 function letDuckyRest() {
   energyLevel = Math.min(energyLevel + 30, 100);
   // happinessLevel = Math.max(happinessLevel - 10, 0);
   updateStats();
+}
+
+function createPlatformGame() {
+  // Clear canvas
+  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+  }
 }
 
 function gameLoop() {
